@@ -10,4 +10,4 @@ npm start -- PROJECT-NAME
 npm run build -- PROJECT-NAME
 git push origin master
 ```
-A git hook will deploy the built project to surge
+A git hook will deploy the built project to [surge](https://surge.sh/help/deploying-continuously-using-git-hooks)
