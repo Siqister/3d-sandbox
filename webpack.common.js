@@ -1,11 +1,15 @@
 //run webpack-dev-server --content-base dist
 //https://webpack.github.io/docs/configuration.html
 const path = require('path');
+const SRC_DIR = process.argv[7] || 'src';
+
+console.log(`./${SRC_DIR}/index.js`);
+console.log(`./${SRC_DIR}/index.html`);
 
 module.exports = {
 	entry:[
-		'./src/index.js',
-		'./src/index.html'
+		`./${SRC_DIR}/index.html`,
+		`./${SRC_DIR}/index.js`
 	],
 	output:{
 		path: path.resolve(__dirname,'dist'),
@@ -15,7 +19,7 @@ module.exports = {
 		rules:[
 			{
 				test: /\.jsx?$/,
-				include: path.resolve(__dirname,'src'),
+				include: path.resolve(__dirname, SRC_DIR),
 				use:{
 					loader:'babel-loader'
 				}
