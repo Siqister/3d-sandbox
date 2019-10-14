@@ -10,7 +10,7 @@ module.exports = merge(common, {
 			'process.env': {'NODE_ENV':JSON.stringify('production')}
 		})
 	],
-	optimization: {
-		minimizer: [new UglifyJSPlugin()]
-	}
+	// optimization: {
+	// 	minimizer: [new UglifyJSPlugin()]
+	// }
 });
