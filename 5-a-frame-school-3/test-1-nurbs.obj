@@ -1,0 +1,336 @@
+# Rhino
+
+mtllib test-1-nurbs.mtl
+usemtl diffuse_0_0_0_255
+v -17 0 308
+v 223 0 308
+v 223 0 200
+v -17 0 200
+cstype bspline
+deg 1
+curv 0 696 1 2 3 4 1
+parm u 0 0 240 348 588 696 696
+end
+usemtl diffuse_0_0_0_255
+# - trim loop
+vp 0 0
+vp 240 0
+cstype bspline
+deg 1
+curv2 1 2
+parm u 0 0 240 240
+end
+vp 240 0
+vp 240 108
+cstype bspline
+deg 1
+curv2 3 4
+parm u 0 0 108 108
+end
+vp 240 108
+vp 0 108
+cstype bspline
+deg 1
+curv2 5 6
+parm u 0 0 240 240
+end
+vp 0 108
+vp 0 0
+cstype bspline
+deg 1
+curv2 7 8
+parm u 0 0 108 108
+end
+v -20 0 147
+v 220 0 147
+v -20 0 39
+v 220 0 39
+cstype bspline
+deg 1 1
+surf 0 240 0 108 5 6 7 8
+parm u 0 0 240 240
+parm v 0 0 108 108
+trim 0 240 1 0 108 2 0 240 3 0 108 4
+end
+usemtl diffuse_0_0_0_255
+# - trim loop
+vp 0 0
+vp 240 0
+cstype bspline
+deg 1
+curv2 9 10
+parm u 0 0 240 240
+end
+vp 240 0
+vp 240 108
+cstype bspline
+deg 1
+curv2 11 12
+parm u 0 0 108 108
+end
+vp 240 108
+vp 0 108
+cstype bspline
+deg 1
+curv2 13 14
+parm u 0 0 240 240
+end
+vp 0 108
+vp 0 0
+cstype bspline
+deg 1
+curv2 15 16
+parm u 0 0 108 108
+end
+v -20 0 -10
+v 220 0 -10
+v -20 0 -118
+v 220 0 -118
+cstype bspline
+deg 1 1
+surf 0 240 0 108 9 10 11 12
+parm u 0 0 240 240
+parm v 0 0 108 108
+trim 0 240 5 0 108 6 0 240 7 0 108 8
+end
+# - trim loop
+vp -240 0
+vp 0 0
+cstype bspline
+deg 1
+curv2 17 18
+parm u -240 -240 0 0
+end
+vp 0 0
+vp 0 60
+cstype bspline
+deg 1
+curv2 19 20
+parm u 0 0 60 60
+end
+vp 0 60
+vp -240 60
+cstype bspline
+deg 1
+curv2 21 22
+parm u -240 -240 0 0
+end
+vp -240 60
+vp -240 0
+cstype bspline
+deg 1
+curv2 23 24
+parm u 0 0 60 60
+end
+v 220 0 -10
+v -20 0 -10
+v 220 60 -10
+v -20 60 -10
+cstype bspline
+deg 1 1
+surf -240 0 0 60 13 14 15 16
+parm u -240 -240 0 0
+parm v 0 0 60 60
+trim -240 0 9 0 60 10 -240 0 11 0 60 12
+end
+# - trim loop
+vp -108 0
+vp 0 0
+cstype bspline
+deg 1
+curv2 25 26
+parm u -108 -108 0 0
+end
+vp 0 0
+vp 0 60
+cstype bspline
+deg 1
+curv2 27 28
+parm u 0 0 60 60
+end
+vp 0 60
+vp -108 60
+cstype bspline
+deg 1
+curv2 29 30
+parm u -108 -108 0 0
+end
+vp -108 60
+vp -108 0
+cstype bspline
+deg 1
+curv2 31 32
+parm u 0 0 60 60
+end
+v 220 0 -118
+v 220 0 -10
+v 220 60 -118
+v 220 60 -10
+cstype bspline
+deg 1 1
+surf -108 0 0 60 17 18 19 20
+parm u -108 -108 0 0
+parm v 0 0 60 60
+trim -108 0 13 0 60 14 -108 0 15 0 60 16
+end
+# - trim loop
+vp -240 0
+vp 0 0
+cstype bspline
+deg 1
+curv2 33 34
+parm u -240 -240 0 0
+end
+vp 0 0
+vp 0 60
+cstype bspline
+deg 1
+curv2 35 36
+parm u 0 0 60 60
+end
+vp 0 60
+vp -240 60
+cstype bspline
+deg 1
+curv2 37 38
+parm u -240 -240 0 0
+end
+vp -240 60
+vp -240 0
+cstype bspline
+deg 1
+curv2 39 40
+parm u 0 0 60 60
+end
+v -20 0 -118
+v 220 0 -118
+v -20 60 -118
+v 220 60 -118
+cstype bspline
+deg 1 1
+surf -240 0 0 60 21 22 23 24
+parm u -240 -240 0 0
+parm v 0 0 60 60
+trim -240 0 17 0 60 18 -240 0 19 0 60 20
+end
+# - trim loop
+vp -108 0
+vp 0 0
+cstype bspline
+deg 1
+curv2 41 42
+parm u -108 -108 0 0
+end
+vp 0 0
+vp 0 60
+cstype bspline
+deg 1
+curv2 43 44
+parm u 0 0 60 60
+end
+vp 0 60
+vp -108 60
+cstype bspline
+deg 1
+curv2 45 46
+parm u -108 -108 0 0
+end
+vp -108 60
+vp -108 0
+cstype bspline
+deg 1
+curv2 47 48
+parm u 0 0 60 60
+end
+v -20 0 -10
+v -20 0 -118
+v -20 60 -10
+v -20 60 -118
+cstype bspline
+deg 1 1
+surf -108 0 0 60 25 26 27 28
+parm u -108 -108 0 0
+parm v 0 0 60 60
+trim -108 0 21 0 60 22 -108 0 23 0 60 24
+end
+# - trim loop
+vp 0 0
+vp 240 0
+cstype bspline
+deg 1
+curv2 49 50
+parm u 0 0 240 240
+end
+vp 240 0
+vp 240 108
+cstype bspline
+deg 1
+curv2 51 52
+parm u 0 0 108 108
+end
+vp 240 108
+vp 0 108
+cstype bspline
+deg 1
+curv2 53 54
+parm u 0 0 240 240
+end
+vp 0 108
+vp 0 0
+cstype bspline
+deg 1
+curv2 55 56
+parm u 0 0 108 108
+end
+v -20 60 -10
+v 220 60 -10
+v -20 60 -118
+v 220 60 -118
+cstype bspline
+deg 1 1
+surf 0 240 0 108 29 30 31 32
+parm u 0 0 240 240
+parm v 0 0 108 108
+trim 0 240 25 0 108 26 0 240 27 0 108 28
+end
+usemtl diffuse_0_0_0_255
+# - trim loop
+vp 0 0
+vp 240 0
+cstype bspline
+deg 1
+curv2 57 58
+parm u 0 0 240 240
+end
+vp 240 0
+vp 240 108
+cstype bspline
+deg 1
+curv2 59 60
+parm u 0 0 108 108
+end
+vp 240 108
+vp 0 108
+cstype bspline
+deg 1
+curv2 61 62
+parm u 0 0 240 240
+end
+vp 0 108
+vp 0 0
+cstype bspline
+deg 1
+curv2 63 64
+parm u 0 0 108 108
+end
+v -20 0 -10
+v 220 0 -10
+v -20 0 -118
+v 220 0 -118
+cstype bspline
+deg 1 1
+surf 0 240 0 108 33 34 35 36
+parm u 0 0 240 240
+parm v 0 0 108 108
+trim 0 240 29 0 108 30 0 240 31 0 108 32
+end
