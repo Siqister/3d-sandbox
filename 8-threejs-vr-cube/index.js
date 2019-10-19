@@ -47,13 +47,9 @@ for(let i = 0; i < NUM_OF_CUBES; i++){
 		new THREE.MeshLambertMaterial({color:Math.random()*0xffffff})
 	);
 
-	// cube.position.x = Math.random()*4-2;
-	// cube.position.y = Math.random()*4-2;
-	// cube.position.z = Math.random()*4-2;
-	cube.position.x = 0;
-	cube.position.y = 0;
-	cube.position.z = 0;
-
+	cube.position.x = Math.random()*4-2;
+	cube.position.y = Math.random()*4-2;
+	cube.position.z = Math.random()*4-2;
 
 	Object.assign(cube.userData, {
 		vx: Math.random()*.1-.05,
