@@ -32,7 +32,7 @@ scene.add(room);
 //Balls
 const balls = new THREE.Object3D();
 const geometry = new THREE.IcosahedronBufferGeometry( 0.03, 2 );
-for(let i = 0; i < 200; i++){
+for(let i = 0; i < 2000; i++){
 	const mesh = new THREE.Mesh(geometry, new THREE.MeshNormalMaterial({ color: Math.random() * 0xffffff }));
 
 	mesh.position.x = Math.random()*4-2;
