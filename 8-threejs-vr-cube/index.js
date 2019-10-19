@@ -35,7 +35,7 @@ scene.add(room);
 
 // Light;
 const light = new THREE.PointLight({color:0xffffff});
-light.position.y = 3;
+light.position.y = 0;
 scene.add(light);
 
 // Cube meshes
