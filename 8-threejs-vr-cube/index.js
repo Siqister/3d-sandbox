@@ -30,12 +30,12 @@ const room = new THREE.LineSegments(
 	new BoxLineGeometry(6,6,6,10,10,10),
 	new THREE.LineBasicMaterial({color:0x808080})
 );
-room.geometry.translate(0,3,0);
+room.position.y = 3;
 scene.add(room);
 
 // Light;
 const light = new THREE.PointLight({color:0xffffff});
-light.position.y = 0;
+light.position.y = 3;
 scene.add(light);
 
 // Cube meshes
