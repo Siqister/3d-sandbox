@@ -10,6 +10,7 @@ import {BoxLineGeometry} from 'three/examples/jsm/geometries/BoxLineGeometry.js'
 // Set up scene, camera, renderer
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(70.0, window.innerWidth/window.innerHeight, 0.1, 500);
+scene.add(camera);
 
 const renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -22,12 +23,16 @@ document.body.appendChild(WEBVR.createButton(renderer));
 
 renderer.setAnimationLoop(render);
 
+// Utilities: raycaster and clock
+const clock = new THREE.Clock();
+const raycaster = new THREE.Raycaster();
+let INTERSECTED = undefined;
 
 // STATIC OBJECTS
 
 // Room
 const room = new THREE.LineSegments(
-	new BoxLineGeometry(6,6,6,10,10,10),
+	new BoxLineGeometry(6,6,6,6,6,6),
 	new THREE.LineBasicMaterial({color:0x808080})
 );
 room.position.y = 3;
@@ -37,6 +42,18 @@ scene.add(room);
 const light = new THREE.PointLight({color:0xffffff});
 light.position.y = 3;
 scene.add(light);
+
+// Target
+const target = new THREE.Mesh(
+	new THREE.RingBufferGeometry(0.02, 0.04, 32),
+	new THREE.MeshBasicMaterial({
+		color:0xffffff,
+		opacity:.5,
+		transparent:true
+	})
+);
+target.position.z = -2; //in front of camera
+camera.add(target);
 
 // Cube meshes
 const NUM_OF_CUBES = 200;
@@ -64,14 +81,28 @@ for(let i = 0; i < NUM_OF_CUBES; i++){
 	room.add(cube);
 }
 
-console.log(room.children)
-
 // Render loop
 function render(){
 	renderer.render(scene, camera);
 
 	// Animate each cube
 	updateCubes();
+
+	// Using raycaster + camera to highlight certain cubes
+	raycaster.setFromCamera({x:0, y:0}, camera);
+	const intersects = raycaster.intersectObjects(room.children);
+	if(intersects.length > 0){
+		if(intersects[0].object != INTERSECTED){
+			if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+
+			INTERSECTED = intersects[0].object;
+			INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
+			INTERSECTED.material.emissive.setHex( 0xff0000 );
+		}
+	}else{
+		if(INTERSECTED) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+		INTERSECTED = undefined;
+	}
 }
 
 function updateCubes(){
@@ -82,9 +113,18 @@ function updateCubes(){
 		cube.rotation.y += ry;
 		cube.rotation.z += rz;
 
-		// cube.position.x += vx;
-		// cube.position.y += vy;
-		// cube.position.z += vz;
+		cube.position.x += vx;
+		cube.position.y += vy;
+		cube.position.z += vz;
+		if(cube.position.x > 3 || cube.position.x < -3){
+			cube.userData.vx = -vx;
+		}
+		if(cube.position.y > 3 || cube.position.y < -3){
+			cube.userData.vy = -vy;
+		}
+		if(cube.position.z > 3 || cube.position.z < -3){
+			cube.userData.vz = -vz;
+		}
 	});
 }
 
